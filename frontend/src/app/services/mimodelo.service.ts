@@ -19,21 +19,18 @@ export class MimodeloService {
     console.log(usuario);
     return this.http.post('http://localhost:3000/usuarios', usuario);
   }
-  /*
-  getUsuario() {
 
+  getUsuario(id: string): Observable<any> {
+    return this.http.get('http://localhost:3000/usuarios/' + id);
   }
 
-  saveUsuario() {
-
+  deleteUsuario(id: string): Observable<any> {
+    return this.http.delete('http://localhost:3000/usuarios/' + id);
   }
 
-  deleteUsuario() {
-
+  updateUsuario(id: string, usuario: Mimodelo): Observable<any> {
+    return this.http.put('http://localhost:3000/usuarios/', usuario);
   }
 
-  updateUsuario() {
 
-  }
-  */
 }
